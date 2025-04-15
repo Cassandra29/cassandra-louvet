@@ -1,0 +1,658 @@
+* {
+  margin: 0;
+  padding: 0;
+  block-size: border-box;
+}
+
+/* ----- POUR AJOUTER UNE TYPOGRAPHIE ----- */
+
+@font-face {
+  font-family: "Bauhaus 93";
+  src: url("/font/BAUHS93.TTF") format("TTF");
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----- STYLE DE LA BARRE DE DÉFILEMENT ----- */
+
+::-webkit-scrollbar {
+  width: 0%;
+}
+
+/* ----- STYLE GÉNÉRAL DU SITE ----- */
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  line-height: 2;
+  color: #333;
+}
+
+/* ----- STYLE DU HEADER ----- */
+
+header {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  padding-top: 1rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: wrap;
+}
+
+/* --- STYLE DU LOGO --- */
+
+.logo a {
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: "Bauhaus 93", sans-serif;
+  text-decoration: none;
+}
+
+.logo h2 {
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: "Bauhaus 93", sans-serif;
+  text-decoration: none;
+  margin-top: -10%;
+}
+
+/* --- STYLE DU MENU DE NAVIGATION --- */
+
+nav {
+  padding: 10px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  font-weight: bold;
+}
+
+/* --- CIBLE TOUS LES LI DANS LE MENU --- */
+.menu li {
+  position: relative;
+}
+
+.menu > li {
+  background-image: url(images/btn_menu.svg);
+  background-repeat: no-repeat;
+  width: 3em;
+  margin-top: 20px;
+}
+
+.menu > li:hover {
+  background-image: url(images/btn_menu-hover.svg);
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  padding: 3rem;
+  display: block;
+}
+
+.menu a:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: -35px;
+  min-width: 150px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+  z-index: 100%;
+}
+
+.submenu li {
+  border-bottom: 1px solid #fff;
+}
+
+.submenu a {
+  padding: 10px;
+  display: block;
+  color: white;
+}
+.submenu a:hover {
+  background-color: #cc2936;
+}
+
+.menu li:hover .submenu,
+.menu li:focus-within .submenu {
+  display: block;
+}
+
+/* --- STYLE POUR LES SOUS-MENUS IMBRIQUÉS --- */
+
+.submenu .submenu {
+  left: 100%;
+  top: 0;
+}
+
+.submenu li:hover > .submenu {
+  display: block;
+}
+
+.submenu a.active {
+  background-color: #cc2936;
+}
+
+/* --- STYLE DES BOUTONS POUR LES RÉSEAUX SOCIAUX --- */
+
+.reseaux-sociaux {
+  list-style: none;
+  width: 2rem;
+  margin-top: 20px;
+}
+
+/* ----- MISE EN PAGE DU CONTENU PRINCIPAL ----- */
+
+/* --- STYLE DU BLOC 1 --- */
+
+#photo-accueil {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.presentation {
+  background-color: #00000018;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 3em;
+}
+
+.presentation p {
+  text-align: center;
+  font-size: 15pt;
+  margin: 3em;
+}
+
+/* --- STYLE DES MOTS EN GRAS DANS LA PRÉSENTATION --- */
+
+.presentation b {
+  color: #cc2936;
+}
+
+.presentation .btn {
+  text-decoration: none;
+  padding: 15px;
+  background-color: #000;
+  border-radius: 50px;
+  color: #fff;
+  border: none;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.presentation .btn:hover {
+  text-decoration: none;
+  background-color: #cc2936;
+  color: #fff;
+}
+
+/* --- STYLE DES TITRES H1/H2/H3 --- */
+
+h1 {
+  text-align: center;
+  font-family: "Bauhaus 93", sans-serif;
+  font-size: 50pt;
+  font-weight: lighter;
+  color: #cc2936;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Bauhaus 93", sans-serif;
+  font-size: 50pt;
+  font-weight: lighter;
+  line-height: 1.5;
+}
+
+h3 {
+  font-family: "Bauhaus 93", sans-serif;
+  font-size: 20pt;
+  margin-bottom: 1em;
+  font-weight: lighter;
+}
+
+/* --- STYLE DU BLOC 2 --- */
+
+.bloc2 {
+  margin-bottom: 3em;
+  padding-top: 3em;
+}
+
+.bloc2 h2 {
+  color: #cc2936;
+}
+
+.bloc2 h3 {
+  color: #000;
+}
+
+.liste-qualites {
+  display: flex;
+  justify-content: space-between;
+}
+
+.qualites {
+  margin: 2em;
+  text-align: center;
+  flex: 1;
+}
+
+.qualites img {
+  width: 100px;
+}
+
+/* --- STYLE BLOC 3 --- */
+
+.bloc3 {
+  margin-bottom: 3em;
+  padding-top: 3em;
+  text-align: center;
+}
+
+.bloc3 h2 {
+  color: #cc2936;
+}
+
+.bloc3 h3 {
+  color: #000;
+}
+
+.liste-competences {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.competences {
+  margin: 2em;
+  flex: 1;
+}
+
+.competences img {
+  width: 350px;
+}
+
+.bloc3 .btn {
+  text-decoration: none;
+  padding: 15px;
+  background-color: #cc2936;
+  border-radius: 50px;
+  color: #fff;
+  border: none;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.bloc3 .btn:hover {
+  text-decoration: none;
+  background-color: #000;
+  color: #fff;
+}
+
+/* ----- MISE EN PAGE DU FOOTER ----- */
+
+footer {
+  background-color: #000;
+  color: #fff;
+  align-items: wrap;
+  margin-top: 3em;
+  font-size: 15pt;
+  text-align: center;
+  padding: 10px;
+}
+
+/* ===== PAGE CONTACT ===== */
+
+/* ----- FORMULAIRE DE CONTACT ----- */
+
+#main-contact {
+  background-image: url(images/img_contact.svg);
+  background-repeat: no-repeat;
+  margin: 3rem;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contact-form h2 {
+  color: #cc2936;
+}
+
+.required {
+  color: #cc2936;
+}
+
+.contact-form form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid;
+  border-radius: 50px;
+  margin-top: 0.5rem;
+  background-color: #ffffffad;
+}
+
+.contact-form #message {
+  height: 200px;
+  border-radius: 25px;
+}
+
+.contact-form button {
+  margin-top: 1.5rem;
+}
+
+.contact-form .btn {
+  text-decoration: none;
+  padding: 15px;
+  background-color: rgb(204, 41, 54);
+  border-radius: 50px;
+  color: #fff;
+  border: none;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.contact-form .btn:hover {
+  text-decoration: none;
+  background-color: #000;
+  color: #fff;
+}
+
+/* ===== PAGE EXPÉRIENCES ===== */
+
+.experiences h2 {
+  color: #cc2936;
+  margin: 3rem;
+}
+
+.experiences img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.liste-job {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem;
+}
+
+.job {
+  margin: 2em;
+  text-align: center;
+  flex: 1;
+  background-color: #cc293724;
+  padding: 15px;
+  color: #000;
+  border-radius: 15px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.job h3 {
+  line-height: 1.5;
+}
+
+.job img {
+  max-width: 250px;
+  max-height: 150px;
+}
+
+.experiences p {
+  margin-bottom: 3rem;
+}
+
+.experiences a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #cc2936;
+}
+
+.experiences a:hover {
+  color: #000;
+}
+.experiences a.btn {
+  text-decoration: none;
+  padding: 15px;
+  background-color: #cc2936;
+  border-radius: 50px;
+  color: #fff;
+  border: none;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.experiences a.btn:hover {
+  text-decoration: none;
+  background-color: #000;
+  color: #fff;
+}
+
+/* ==== PAGE RÉALISATIONS ===== */
+
+.experiences .liste-categories h2 {
+  color: #cc2936;
+  font-size: 30pt;
+}
+
+.liste-categories {
+  display: flex;
+  justify-content: space-between;
+}
+
+.categories {
+  margin: 2em;
+  text-align: center;
+  flex: 1;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.categories img {
+  border-radius: 15px;
+  margin-bottom: 3rem;
+}
+
+/* ===== STYLE DES PAGES DE CHAQUE PROJET/RÉALISATION ===== */
+
+.projet {
+  margin: auto;
+}
+
+.projet p {
+  margin-bottom: 3rem;
+}
+
+.projet a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+
+.projet a:hover {
+  color: #cc2936;
+}
+
+.img-realisations {
+  max-width: 1000px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* ----- POUR LES ÉCRANS DE MOINS DE 1024PX (TABLETTES) -----*/
+@media screen and (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -50px;
+  }
+
+  .liste-qualites,
+  .liste-competences {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .competences,
+  .qualites {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+/* POUR LES ÉCRANS DE MOINS DE 768px (MOBILES) */
+@media screen and (max-width: 768px) {
+  .logo a,
+  .logo h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 3rem;
+    align-items: center;
+    margin-bottom: -50px;
+  }
+
+  .menu > li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .presentation p {
+    font-size: 14px;
+    margin: 1.5em;
+  }
+
+  .bloc2,
+  .bloc3 {
+    padding-top: 2em;
+  }
+
+  .btn {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* POUR LES PETITS ÉCRANS (MOINS DE 480px) */
+@media screen and (max-width: 480px) {
+  h1,
+  h2 {
+    font-size: 24px;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+  .presentation p {
+    font-size: 12px;
+  }
+
+  .btn {
+    font-size: 10px;
+    padding: 8px;
+  }
+}
+
+/* --- RESPONSIVE PAGE EXPÉRIENCES --- */
+
+/* POUR LES ÉCRANS DE MOINS DE 768px (MOBILES) */
+@media (max-width: 1024px) {
+  .liste-job {
+    flex-direction: column;
+    align-items: center;
+  }
+  .job {
+    flex: 1 1 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .liste-job {
+    margin: 1.5rem;
+  }
+  .job {
+    flex: 1 1 100%;
+    padding: 30px;
+  }
+
+  .experiences h2 {
+    font-size: 50px;
+  }
+}
+
+/* --- RESPONSIVE PAGE RÉALISATIONS --- */
+
+/* POUR LES ÉCRANS DE MOINS DE 768px (MOBILES) */
+@media (max-width: 1024px) {
+  .liste-categories {
+    flex-direction: column;
+    align-items: center;
+  }
+  .categories {
+    flex: 1 1 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .liste-categories {
+    margin: 1.5rem;
+  }
+  .categories {
+    flex: 1 1 100%;
+    padding: 30px;
+  }
+
+  .experiences h2 {
+    font-size: 50px;
+  }
+}
